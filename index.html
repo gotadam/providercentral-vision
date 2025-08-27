@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colorado Shines - Early Childhood Professional Hub</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⭐</text></svg>">
     <style>
         * {
             margin: 0;
@@ -32,6 +33,23 @@
             justify-content: space-between;
             align-items: center;
             padding: 0 2rem;
+            position: relative;
+        }
+        
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
         }
         
         .logo {
@@ -106,15 +124,16 @@
         .dropdown-item {
             padding: 0.5rem;
             text-decoration: none;
-            color: #4a5568;
+            color: #2d3748;
             border-radius: 4px;
             transition: background 0.2s;
             font-size: 0.9rem;
+            cursor: pointer;
         }
         
         .dropdown-item:hover {
             background: #f7fafc;
-            color: #2d3748;
+            color: #1a202c;
         }
         
         .dropdown-more {
@@ -434,16 +453,69 @@
         }
         
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .mobile-menu-btn {
+                display: block;
             }
             
-            .hero h1 {
-                font-size: 2rem;
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #2c5aa0;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                z-index: 1000;
+            }
+            
+            .nav-links.mobile-open {
+                display: flex;
+            }
+            
+            .nav-links li {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 0.75rem 1rem;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            .dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background: rgba(255,255,255,0.1);
+                margin-top: 0.5rem;
             }
             
             .dropdown-content {
                 grid-template-columns: 1fr;
+            }
+            
+            .dropdown-item {
+                color: #e2e8f0;
+                border-bottom: 1px solid rgba(255,255,255,0.05);
+            }
+            
+            .dropdown-item:hover {
+                background: rgba(255,255,255,0.1);
+                color: white;
+            }
+            
+            .dropdown-more {
+                color: #cbd5e0;
+                border-top: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
             }
             
             .dashboard-header {
@@ -460,55 +532,55 @@
             <div class="logo">
                 ⭐ Colorado Shines
             </div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#dashboard">My Dashboard</a></li>
                 <li class="nav-item">
-                    <a href="#development">Professional Development ▼</a>
+                    <a href="#development">Professional Development</a>
                     <div class="dropdown">
                         <div class="dropdown-content">
                             <div class="dropdown-section">
-                                <a href="#" class="dropdown-item">My Credentials Status</a>
-                                <a href="#" class="dropdown-item">Required Training</a>
-                                <a href="#" class="dropdown-item">Career Pathways</a>
+                                <span class="dropdown-item">My Credentials Status</span>
+                                <span class="dropdown-item">Required Training</span>
+                                <span class="dropdown-item">Career Pathways</span>
                             </div>
                             <div class="dropdown-section">
-                                <a href="#" class="dropdown-item">Transcript Management</a>
-                                <a href="#" class="dropdown-item">Professional Resources</a>
+                                <span class="dropdown-item">Transcript Management</span>
+                                <span class="dropdown-item">Professional Resources</span>
                             </div>
                         </div>
                         <div class="dropdown-more">More ⌄</div>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a href="#programs">Program Management ▼</a>
+                    <a href="#programs">Program Management</a>
                     <div class="dropdown">
                         <div class="dropdown-content">
                             <div class="dropdown-section">
-                                <a href="#" class="dropdown-item">Licensing & Compliance</a>
-                                <a href="#" class="dropdown-item">Quality Rating Progress</a>
-                                <a href="#" class="dropdown-item">UPK Enrollment</a>
+                                <span class="dropdown-item">Licensing & Compliance</span>
+                                <span class="dropdown-item">Quality Rating Progress</span>
+                                <span class="dropdown-item">UPK Enrollment</span>
                             </div>
                             <div class="dropdown-section">
-                                <a href="#" class="dropdown-item">Attendance</a>
-                                <a href="#" class="dropdown-item">Reports & Analysis</a>
-                                <a href="#" class="dropdown-item">Special Needs Coordination</a>
+                                <span class="dropdown-item">Attendance</span>
+                                <span class="dropdown-item">Reports & Analysis</span>
+                                <span class="dropdown-item">Special Needs Coordination</span>
                             </div>
                         </div>
                         <div class="dropdown-more">More ⌄</div>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a href="#resources">Business Resources ▼</a>
+                    <a href="#resources">Business Resources</a>
                     <div class="dropdown">
                         <div class="dropdown-content">
                             <div class="dropdown-section">
-                                <a href="#" class="dropdown-item">Funding Opportunities</a>
-                                <a href="#" class="dropdown-item">Operational Support</a>
-                                <a href="#" class="dropdown-item">Community Connections</a>
+                                <span class="dropdown-item">Funding Opportunities</span>
+                                <span class="dropdown-item">Operational Support</span>
+                                <span class="dropdown-item">Community Connections</span>
                             </div>
                             <div class="dropdown-section">
-                                <a href="#" class="dropdown-item">Financial Planning</a>
-                                <a href="#" class="dropdown-item">Marketing Resources</a>
+                                <span class="dropdown-item">Financial Planning</span>
+                                <span class="dropdown-item">Marketing Resources</span>
                             </div>
                         </div>
                         <div class="dropdown-more">More ⌄</div>
@@ -516,7 +588,10 @@
                 </li>
                 <li><a href="#community">Community</a></li>
             </ul>
-            <a href="#signin" class="sign-in-btn">Sign In</a>
+            <div class="nav-right">
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+                <a href="#signin" class="sign-in-btn">Sign In</a>
+            </div>
         </nav>
     </header>
 
@@ -614,42 +689,36 @@
                     <span class="journey-icon">🎓</span>
                     <h3>Professional Development</h3>
                     <p>Manage credentials, complete required training, and explore career advancement opportunities.</p>
-                    <div class="launch-hint">Access your professional journey →</div>
                 </div>
                 
                 <div class="journey-card">
                     <span class="journey-icon">📋</span>
                     <h3>Program Management</h3>
                     <p>Handle licensing, track quality rating progress, manage attendance, and coordinate operations.</p>
-                    <div class="launch-hint">Manage your program →</div>
                 </div>
                 
                 <div class="journey-card">
                     <span class="journey-icon">⭐</span>
                     <h3>Quality Journey</h3>
                     <p>Advance through Colorado Shines quality levels with assessments, improvement planning, and support.</p>
-                    <div class="launch-hint">Continue quality improvement →</div>
                 </div>
                 
                 <div class="journey-card">
                     <span class="journey-icon">🏫</span>
                     <h3>Universal Preschool Admin</h3>
                     <p>Manage UPK enrollment, coordinate with families, and handle preschool program administration.</p>
-                    <div class="launch-hint">Access UPK tools →</div>
                 </div>
                 
                 <div class="journey-card">
                     <span class="journey-icon">💼</span>
                     <h3>Business Resources</h3>
                     <p>Find funding opportunities, get operational support, and connect with business development resources.</p>
-                    <div class="launch-hint">Grow your business →</div>
                 </div>
                 
                 <div class="journey-card">
                     <span class="journey-icon">🤝</span>
                     <h3>Community & Support</h3>
                     <p>Connect with peers, access specialized services, and get help when you need it.</p>
-                    <div class="launch-hint">Join the community →</div>
                 </div>
             </div>
         </div>
@@ -698,5 +767,22 @@
             <p>&copy; 2025 Colorado Department of Early Childhood. Supporting Colorado's early childhood professionals.</p>
         </div>
     </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('mobile-open');
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navLinks = document.getElementById('nav-links');
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!navLinks.contains(event.target) && !mobileBtn.contains(event.target)) {
+                navLinks.classList.remove('mobile-open');
+            }
+        });
+    </script>
 </body>
 </html>
