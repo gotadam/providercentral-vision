@@ -281,8 +281,16 @@
             border-radius: 8px;
             border-left: 4px solid #3182ce;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .status-card:hover {
+            background: #f0f8ff;
+            border-left-color: #2c5aa0;
+            transform: translateY(-1px);
         }
         
         .status-icon {
@@ -620,17 +628,25 @@
                 
                 <div class="status-indicators">
                     <div class="status-card">
-                        <div class="status-icon status-active">📋</div>
-                        <div>
-                            <div style="font-weight: 600;">Getting Started</div>
-                            <div style="color: #276749;">Setup Complete</div>
+                        <div class="status-icon status-active">⚙️</div>
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600;">Program Settings</div>
+                            <div style="color: #276749; margin: 0.5rem 0;">
+                                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem;">
+                                    <div style="flex: 1; height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden;">
+                                        <div style="width: 94%; height: 100%; background: #38a169; transition: width 0.3s;"></div>
+                                    </div>
+                                    <span style="font-size: 0.8rem; font-weight: 600;">94%</span>
+                                </div>
+                                <div style="font-size: 0.85rem;">Complete Setup</div>
+                            </div>
                         </div>
                     </div>
                     <div class="status-card">
                         <div class="status-icon status-active">⭐</div>
-                        <div>
+                        <div style="flex: 1;">
                             <div style="font-weight: 600;">Quality Progress</div>
-                            <div style="color: #276749; display: flex; align-items: center; gap: 0.5rem;">
+                            <div style="color: #276749; display: flex; align-items: center; gap: 0.5rem; margin-top: 0.25rem;">
                                 Level 4 
                                 <div class="quality-progress">
                                     <div class="progress-circle"></div>
@@ -644,36 +660,39 @@
                     </div>
                     <div class="status-card">
                         <div class="status-icon status-warning">🎓</div>
-                        <div>
+                        <div style="flex: 1;">
                             <div style="font-weight: 600;">Staff & Training</div>
-                            <div style="color: #744210;">3 certificates due</div>
+                            <div style="color: #744210; margin-top: 0.25rem;">3 certificates due</div>
+                            <div style="font-size: 0.85rem; color: #4a5568; margin-top: 0.25rem;">12 staff members active</div>
                         </div>
                     </div>
                     <div class="status-card">
                         <div class="status-icon status-active">👶</div>
-                        <div>
+                        <div style="flex: 1;">
                             <div style="font-weight: 600;">Enrollment & Families</div>
-                            <div style="color: #276749;">22 UPK children enrolled</div>
+                            <div style="color: #276749; margin-top: 0.25rem;">7 UPK for review</div>
+                            <div style="color: #276749;">13 enrolled</div>
+                            <div style="font-size: 0.85rem; color: #4a5568; margin-top: 0.25rem;">22 total capacity</div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="quick-actions">
                     <a href="#" class="action-btn">
-                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📊</div>
-                        <div>Review Quality Plan</div>
-                    </a>
-                    <a href="#" class="action-btn">
-                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📚</div>
-                        <div>Complete Staff Training</div>
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🎓</div>
+                        <div>My Professional Development</div>
                     </a>
                     <a href="#" class="action-btn">
                         <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">💰</div>
                         <div>Explore Funding</div>
                     </a>
                     <a href="#" class="action-btn">
-                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">👥</div>
-                        <div>Manage Enrollment</div>
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📊</div>
+                        <div>Manage Attendance</div>
+                    </a>
+                    <a href="#" class="action-btn">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">👤</div>
+                        <div>My Account</div>
                     </a>
                 </div>
             </div>
